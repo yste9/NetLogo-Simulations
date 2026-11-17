@@ -1,0 +1,5 @@
+PASS : valeurs initiales des six sliders ; traces v0/v1 identiques sur 101 etats ; extinction tick 22.0 ; 100 appels supplementaires sans progression.
+PASS : reglages conserves par setup ; nid aux limites ; energie-max 1 ; vitesse nulle pendant 25 tours.
+PASS : vitesse 10 et cout 5 pris en compte sans setup ; 1200 mises a jour avec cout proportionnel.
+PASS : effectif 200 ; nid oppose ; energie-max 100 ; effectif nul sans progression des ticks.
+SUCCES : tous les controles NetLogo v1 sont passes.

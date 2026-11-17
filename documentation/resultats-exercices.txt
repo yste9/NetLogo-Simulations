@@ -1,0 +1,17 @@
+CHARGE ET COMPILE : paisibles_moutons_v0
+PASS : initialisation, nourriture partagee, plafond herbe, naissances, faim et mortalite.
+PASS : graine 1711, tick=100.0, moutons=82.0, herbe moyenne=89.30834294502115
+PASS : graine 42, tick=100.0, moutons=83.0, herbe moyenne=88.87389465590158
+PASS : graine 7, tick=100.0, moutons=80.0, herbe moyenne=89.33448673587083
+CHARGE ET COMPILE : predators_v0
+PASS : initialisation, nourriture partagee, plafond herbe, naissances, faim et mortalite, chasse et cycle predateurs.
+PASS : graine 1711, tick=100.0, moutons=75.0, herbe moyenne=89.4728950403691, predateurs=10.0
+PASS : graine 42, tick=100.0, moutons=70.0, herbe moyenne=90.06843521722415, predateurs=10.0
+PASS : graine 7, tick=100.0, moutons=72.0, herbe moyenne=89.59592464436756, predateurs=11.0
+CHARGE ET COMPILE : creation_ville_v0
+PASS : blocs 1x1/2x2, limites, sauvegarde sans ecrasement, relecture, quatre fichiers invalides sans alteration et fichier vide.
+CHARGE ET COMPILE : ballade_ville_v0
+PASS : ville sauvee par l'editeur chargee, 50 promeneurs sur rues pendant 200 tours, enfermement sans passage de mur, exemple fourni.
+CHARGE ET COMPILE : Test_EvtSouris
+PASS : GO-IHM sans clic ne modifie pas le monde ; interaction physique a verifier manuellement.
+SUCCES : cinq modeles valides. Fichiers de test : documentation\validation-villes-3703720808993746148

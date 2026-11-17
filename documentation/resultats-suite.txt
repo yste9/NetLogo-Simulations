@@ -1,0 +1,21 @@
+V2 chargee et compilee.
+PASS : initialisation, couleurs plein/demi-reserve, 20 deces au nid, etiquettes, reset et arret monde vide.
+PASS : 100 appels GO, graine 1711, conservation effectif, reserves et etiquettes ; survivants=0.0, ticks=57.0
+PASS : 100 appels GO, graine 42, conservation effectif, reserves et etiquettes ; survivants=0.0, ticks=52.0
+PASS : 100 appels GO, graine 7, conservation effectif, reserves et etiquettes ; survivants=0.0, ticks=53.0
+V3 chargee et compilee.
+PASS : initialisation, couleurs plein/demi-reserve, 20 deces au nid, etiquettes, reset et arret monde vide.
+PASS : retour a vitesse maximale, plein individuel a energie exactement nulle, mort avant arrivee, energie-max 1, angle nul et nid fige.
+PASS : 100 deplacements exploratoires, variation angulaire bornee et cout proportionnel.
+PASS : 100 appels GO, graine 1711, conservation effectif, reserves et etiquettes ; survivants=6.0, ticks=100.0
+PASS : 100 appels GO, graine 42, conservation effectif, reserves et etiquettes ; survivants=5.0, ticks=100.0
+PASS : 100 appels GO, graine 7, conservation effectif, reserves et etiquettes ; survivants=6.0, ticks=100.0
+V4 chargee et compilee.
+PASS : initialisation, couleurs plein/demi-reserve, 20 deces au nid, etiquettes, reset et arret monde vide.
+PASS : retour a vitesse maximale, plein individuel a energie exactement nulle, mort avant arrivee, energie-max 1, angle nul et nid fige.
+PASS : 100 deplacements exploratoires, variation angulaire bornee et cout proportionnel.
+PASS : obstacles exacts, nid libre, obstacle intermediaire, raccord torique, coin diagonal, encerclement et 2600 obstacles.
+PASS : 100 appels GO, graine 1711, conservation effectif, reserves et etiquettes ; survivants=4.0, ticks=100.0
+PASS : 100 appels GO, graine 42, conservation effectif, reserves et etiquettes ; survivants=3.0, ticks=100.0
+PASS : 100 appels GO, graine 7, conservation effectif, reserves et etiquettes ; survivants=3.0, ticks=100.0
+SUCCES : tous les controles v2, v3 et v4 sont passes.

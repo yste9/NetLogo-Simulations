@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='utf-8'?>
+<experiments>
+  <experiment name="initialisation" repetitions="1" runMetricsEveryStep="true">
+    <setup>random-seed 1711 setup
+if count turtles != nb-tortues [ error "effectif" ]
+if any? turtles with [xcor != x-nid or ycor != y-nid] [error "nid"]
+if any? turtles with [energie &lt; 1 or energie &gt; energie-max or energie != floor energie] [error "energie initiale"]
+if ticks != 0 [error "ticks initiaux"]</setup>
+    <go>go</go>
+    <timeLimit steps="1" />
+    <metric>count turtles</metric>
+    <metric>ticks</metric>
+    <metric>min [energie] of turtles</metric>
+    <metric>max [energie] of turtles</metric>
+  </experiment>
+  <experiment name="deplacement-energie" repetitions="1" runMetricsEveryStep="true">
+    <setup>random-seed 1711 setup
+ask turtles [set energie 10000]</setup>
+    <go>let avant count turtles
+ask turtles [
+  let x-avant xcor let y-avant ycor let e-avant energie
+  deplacer-et-consommer
+  let cout e-avant - energie
+  let trajet distancexy x-avant y-avant
+  if cout &lt; 0 or cout &gt; vitesse-max * energie-par-case [error "borne energie"]
+  if abs (cout - trajet * energie-par-case) &gt; 0.0000001 [error "distance et cout"]
+  if trajet &gt; vitesse-max + 0.0000001 [error "vitesse"]
+]
+tick
+if count turtles &gt; avant [error "population croissante"]</go>
+    <timeLimit steps="100" />
+    <metric>count turtles</metric>
+    <metric>ticks</metric>
+    <metric>sum [energie] of turtles</metric>
+    <metric>length remove-duplicates [heading] of turtles</metric>
+  </experiment>
+  <experiment name="mort" repetitions="1" runMetricsEveryStep="true">
+    <setup>setup ask turtles [set energie 0]</setup>
+    <go>go
+if any? turtles [error "mort"]
+if ticks != 1 [error "tick mort"]</go>
+    <timeLimit steps="1" />
+    <metric>count turtles</metric>
+    <metric>ticks</metric>
+  </experiment>
+  <experiment name="extinction" repetitions="1" runMetricsEveryStep="true">
+    <setup>random-seed 1711 setup</setup>
+    <go>let avant count turtles
+go
+if count turtles &gt; avant [error "population croissante"]</go>
+    <timeLimit steps="1000" />
+    <exitCondition>not any? turtles</exitCondition>
+    <metric>count turtles</metric>
+    <metric>ticks</metric>
+  </experiment>
+  <experiment name="monde-vide" repetitions="1" runMetricsEveryStep="true">
+    <setup>setup clear-turtles</setup>
+    <go>go
+if ticks != 0 [error "temps apres extinction"]</go>
+    <timeLimit steps="1" />
+    <metric>count turtles</metric>
+    <metric>ticks</metric>
+  </experiment>
+  <experiment name="dernier-pas-et-bord" repetitions="1" runMetricsEveryStep="true">
+    <setup>setup clear-turtles
+create-turtles 1 [setxy max-pxcor 0 set heading 90 set energie 10 forward 2
+if abs (xcor - (min-pxcor + 1)) &gt; 0.0000001 [error "raccord bord"]]
+ask turtles [set energie 0.5]
+random-seed 1711</setup>
+    <go>go</go>
+    <timeLimit steps="100" />
+    <exitCondition>not any? turtles</exitCondition>
+    <metric>count turtles</metric>
+    <metric>ticks</metric>
+  </experiment>
+</experiments>

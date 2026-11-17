@@ -1,0 +1,10 @@
+# Support de cours conserve localement ; non redistribue dans le depot public.
+cours/*.pdf
+# Fichiers temporaires produits par les validations.
+documentation/validation-villes-*/
+*.class
+*.log
+*.bak
+*.nlogo~
+.DS_Store
+Thumbs.db
